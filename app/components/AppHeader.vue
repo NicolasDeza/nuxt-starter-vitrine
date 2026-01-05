@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
+import { useColorMode } from "#imports";
 
 // Menu mobile gestion état
 const isMenuOpen = ref(false);
@@ -10,6 +11,13 @@ const toggleMenu = () => {
 
 const closeMenu = () => {
   isMenuOpen.value = false;
+};
+
+// Color mode (dark/light)
+const colorMode = useColorMode();
+
+const toggleTheme = () => {
+  colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
 };
 
 // Fermer le menu avec la touche Escape ( accèssibilité)
@@ -29,7 +37,9 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <header class="sticky top-0 z-50 w-full border-b border-neutral-200 bg-white">
+  <header
+    class="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-colors"
+  >
     <nav
       class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
       aria-label="Navigation principale"
@@ -42,7 +52,11 @@ onUnmounted(() => {
         @click="closeMenu"
       >
         <NuxtImg
-          src="/images/logo/logo-light-nuxt.svg"
+          :src="
+            colorMode.preference === 'dark'
+              ? '/images/logo/logo-dark-nuxt.svg'
+              : '/images/logo/logo-light-nuxt.svg'
+          "
           alt="Logo Nom du site"
           class="h-7 w-auto"
           loading="eager"
@@ -50,69 +64,96 @@ onUnmounted(() => {
         />
       </NuxtLink>
 
-      <!-- Navigation desktop ( écran pc ) -->
-
-      <!-- 💡 Pour déplacer la navigation : modifiez les classes Tailwind ci-dessous 
-
-           - hidden md:flex items-center gap-8 font-medium : navigation au centre (par défaut) 
-
-           - hidden md:flex items-center gap-8 font-medium mr-auto : navigation après le logo (gauche) | Ajouter margin left (ml-8 ou 10)
-
-           - hidden md:flex items-center gap-8 font-medium ml-auto : navigation avant les actions (droite) | Ajouter margin right (mr-8 ou 10)
-      -->
-      <ul class="hidden md:flex items-center gap-8 font-semibold">
+      <!-- Navigation desktop -->
+      <ul
+        class="hidden md:flex items-center gap-8 font-semibold dark:text-white"
+      >
         <li>
-          <NuxtLink to="/" class="hover:text-neutral-600 transition">
+          <NuxtLink
+            to="/"
+            class="hover:text-neutral-600 dark:hover:text-neutral-300 transition"
+          >
             Accueil
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/services" class="hover:text-neutral-600 transition">
+          <NuxtLink
+            to="/services"
+            class="hover:text-neutral-600 dark:hover:text-neutral-300 transition"
+          >
             Services
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/projets" class="hover:text-neutral-600 transition">
+          <NuxtLink
+            to="/projets"
+            class="hover:text-neutral-600 dark:hover:text-neutral-300 transition"
+          >
             Projets
           </NuxtLink>
         </li>
         <li>
-          <NuxtLink to="/contact" class="hover:text-neutral-600 transition">
+          <NuxtLink
+            to="/contact"
+            class="hover:text-neutral-600 dark:hover:text-neutral-300 transition"
+          >
             Contact
           </NuxtLink>
         </li>
       </ul>
 
-      <!-- Actions (toujours à droite) -->
+      <!-- Actions -->
       <div class="flex items-center gap-3">
-        <!-- Toggle dark mode (placeholder) -->
-        <!-- Activer ou désactiver le toggle selon le besoin et l'utilité du dark mode -->
-        <button
-          type="button"
-          aria-label="Basculer le thème"
-          class="h-9 w-9 rounded-md border border-neutral-200 flex items-center justify-center hover:bg-neutral-100 transition"
-        >
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            class="h-4 w-4"
-            fill="none"
-            viewBox="0 0 24 24"
-            stroke="currentColor"
-            aria-hidden="true"
+        <!-- Toggle dark mode -->
+        <ClientOnly>
+          <button
+            type="button"
+            aria-label="Basculer le thème"
+            class="h-9 w-9 rounded-md border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 transition"
+            @click="toggleTheme"
           >
-            <path
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              stroke-width="2"
-              d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364-1.414 1.414M7.05 16.95l-1.414 1.414m0-11.314 1.414 1.414m11.314 11.314 1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z"
-            />
-          </svg>
-        </button>
+            <!-- Soleil -->
+            <svg
+              v-if="colorMode.preference === 'light'"
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364-1.414 1.414M7.05 16.95l-1.414 1.414m0-11.314 1.414 1.414m11.314 11.314 1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z"
+              />
+            </svg>
 
-        <!-- CTA desktop ( écran pc) -->
+            <!-- Lune -->
+            <svg
+              v-else
+              xmlns="http://www.w3.org/2000/svg"
+              class="h-4 w-4"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              aria-hidden="true"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                stroke-width="2"
+                d="M21 12.79A9 9 0 1111.21 3a7 7 0 009.79 9.79z"
+              />
+            </svg>
+          </button>
+        </ClientOnly>
+
+        <!-- CTA desktop -->
         <NuxtLink
           to="/contact"
-          class="hidden sm:inline-flex items-center justify-center rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition"
+          class="hidden sm:inline-flex items-center justify-center rounded-md bg-neutral-900 dark:bg-white px-4 py-2 text-sm font-medium text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition"
         >
           Contact
         </NuxtLink>
@@ -120,7 +161,7 @@ onUnmounted(() => {
         <!-- Hamburger mobile -->
         <button
           type="button"
-          class="md:hidden h-9 w-9 rounded-md border border-neutral-200 flex items-center justify-center hover:bg-neutral-100 transition"
+          class="md:hidden h-9 w-9 rounded-md border border-neutral-200 dark:border-neutral-700 flex items-center justify-center hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
           :aria-label="isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
           :aria-expanded="isMenuOpen"
           aria-controls="mobile-menu"
@@ -175,7 +216,7 @@ onUnmounted(() => {
       <div
         v-if="isMenuOpen"
         id="mobile-menu"
-        class="md:hidden border-t border-neutral-200 bg-white"
+        class="md:hidden border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950"
         role="region"
         aria-label="Menu de navigation mobile"
       >
@@ -201,11 +242,11 @@ onUnmounted(() => {
             </NuxtLink>
           </li>
 
-          <!-- CTA mobile ( smartphone ) -->
+          <!-- CTA mobile -->
           <li class="pt-2">
             <NuxtLink
               to="/contact"
-              class="inline-flex w-full justify-center rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition"
+              class="inline-flex w-full justify-center rounded-md bg-neutral-900 dark:bg-white px-4 py-2 text-sm font-medium text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition"
               @click="closeMenu"
             >
               Contact
