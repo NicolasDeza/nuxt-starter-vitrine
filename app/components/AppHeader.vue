@@ -60,7 +60,7 @@ onUnmounted(() => {
 
            - hidden md:flex items-center gap-8 font-medium ml-auto : navigation avant les actions (droite) | Ajouter margin right (mr-8 ou 10)
       -->
-      <ul class="hidden md:flex items-center gap-8 font-medium">
+      <ul class="hidden md:flex items-center gap-8 font-semibold">
         <li>
           <NuxtLink to="/" class="hover:text-neutral-600 transition">
             Accueil

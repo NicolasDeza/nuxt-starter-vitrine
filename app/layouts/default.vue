@@ -6,10 +6,7 @@
     <AppHeader />
     <!-- Main content -->
     <main class="flex-1 w-full">
-      <!-- Wrapper du site (max w à changer selon vos choix) -->
-      <div class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8">
-        <slot />
-      </div>
+      <slot />
     </main>
   </div>
 </template>
