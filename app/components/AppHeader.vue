@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from "vue";
+import { ref, onMounted, onUnmounted } from "vue";
 
 const isMenuOpen = ref(false);
 
@@ -10,6 +10,21 @@ const toggleMenu = () => {
 const closeMenu = () => {
   isMenuOpen.value = false;
 };
+
+// Fermer le menu avec la touche Escape ( accèssibilité)
+const handleKeydown = (event: KeyboardEvent) => {
+  if (event.key === "Escape" && isMenuOpen.value) {
+    closeMenu();
+  }
+};
+
+onMounted(() => {
+  document.addEventListener("keydown", handleKeydown);
+});
+
+onUnmounted(() => {
+  document.removeEventListener("keydown", handleKeydown);
+});
 </script>
 
 <template>
@@ -19,17 +34,22 @@ const closeMenu = () => {
       aria-label="Navigation principale"
     >
       <!-- Logo -->
-      <NuxtLink to="/" class="flex items-center gap-2" @click="closeMenu">
+      <NuxtLink
+        to="/"
+        class="flex items-center gap-2"
+        aria-label="Retour à l'accueil"
+        @click="closeMenu"
+      >
         <NuxtImg
           src="/images/logo/logo-light-nuxt.svg"
-          alt="Nom du site"
+          alt="Logo Nom du site"
           class="h-7 w-auto"
           loading="eager"
           decoding="async"
         />
       </NuxtLink>
 
-      <!-- Navigation desktop -->
+      <!-- Navigation desktop ( écran pc ) -->
       <ul class="hidden md:flex items-center gap-8 font-medium">
         <li>
           <NuxtLink to="/" class="hover:text-neutral-600 transition">
@@ -67,6 +87,7 @@ const closeMenu = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
@@ -77,7 +98,7 @@ const closeMenu = () => {
           </svg>
         </button>
 
-        <!-- CTA desktop -->
+        <!-- CTA desktop ( écran pc) -->
         <NuxtLink
           to="/contact"
           class="hidden sm:inline-flex items-center justify-center rounded-md bg-neutral-900 px-4 py-2 text-sm font-medium text-white hover:bg-neutral-800 transition"
@@ -87,9 +108,11 @@ const closeMenu = () => {
 
         <!-- Hamburger mobile -->
         <button
+          type="button"
           class="md:hidden h-9 w-9 rounded-md border border-neutral-200 flex items-center justify-center hover:bg-neutral-100 transition"
-          aria-label="Menu"
+          :aria-label="isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
           :aria-expanded="isMenuOpen"
+          aria-controls="mobile-menu"
           @click="toggleMenu"
         >
           <svg
@@ -99,6 +122,7 @@ const closeMenu = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
@@ -115,6 +139,7 @@ const closeMenu = () => {
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
+            aria-hidden="true"
           >
             <path
               stroke-linecap="round"
@@ -138,7 +163,10 @@ const closeMenu = () => {
     >
       <div
         v-if="isMenuOpen"
+        id="mobile-menu"
         class="md:hidden border-t border-neutral-200 bg-white"
+        role="region"
+        aria-label="Menu de navigation mobile"
       >
         <ul class="flex flex-col px-4 py-4 gap-2 text-sm font-medium">
           <li>
@@ -162,7 +190,7 @@ const closeMenu = () => {
             </NuxtLink>
           </li>
 
-          <!-- CTA mobile -->
+          <!-- CTA mobile ( smartphone ) -->
           <li class="pt-2">
             <NuxtLink
               to="/contact"
