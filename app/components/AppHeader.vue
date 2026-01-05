@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { ref, onMounted, onUnmounted } from "vue";
 
+// Menu mobile gestion état
 const isMenuOpen = ref(false);
 
 const toggleMenu = () => {
