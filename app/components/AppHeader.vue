@@ -51,6 +51,15 @@ onUnmounted(() => {
       </NuxtLink>
 
       <!-- Navigation desktop ( écran pc ) -->
+
+      <!-- 💡 Pour déplacer la navigation : modifiez les classes Tailwind ci-dessous 
+
+           - hidden md:flex items-center gap-8 font-medium : navigation au centre (par défaut) 
+
+           - hidden md:flex items-center gap-8 font-medium mr-auto : navigation après le logo (gauche) | Ajouter margin left (ml-8 ou 10)
+
+           - hidden md:flex items-center gap-8 font-medium ml-auto : navigation avant les actions (droite) | Ajouter margin right (mr-8 ou 10)
+      -->
       <ul class="hidden md:flex items-center gap-8 font-medium">
         <li>
           <NuxtLink to="/" class="hover:text-neutral-600 transition">
@@ -74,7 +83,7 @@ onUnmounted(() => {
         </li>
       </ul>
 
-      <!-- Actions -->
+      <!-- Actions (toujours à droite) -->
       <div class="flex items-center gap-3">
         <!-- Toggle dark mode (placeholder) -->
         <!-- Activer ou désactiver le toggle selon le besoin et l'utilité du dark mode -->
