@@ -77,6 +77,7 @@ onUnmounted(() => {
       <!-- Actions -->
       <div class="flex items-center gap-3">
         <!-- Toggle dark mode (placeholder) -->
+        <!-- Activer ou désactiver le toggle selon le besoin et l'utilité du dark mode -->
         <button
           type="button"
           aria-label="Basculer le thème"
