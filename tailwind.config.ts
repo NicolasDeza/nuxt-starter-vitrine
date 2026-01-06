@@ -13,7 +13,7 @@ export default <Config>{
   theme: {
     extend: {
       colors: {
-        text: "hsl(var(--text))",
+        foreground: "hsl(var(--foreground))",
         primary: {
           DEFAULT: "hsl(var(--primary))",
           hover: "hsl(var(--primary-hover))",

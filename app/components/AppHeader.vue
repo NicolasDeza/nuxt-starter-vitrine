@@ -38,7 +38,7 @@ onUnmounted(() => {
 
 <template>
   <header
-    class="sticky top-0 z-50 w-full bg-primary-bg text-text border-b border-gray-200 dark:border-white/10 transition-colors"
+    class="sticky top-0 z-50 w-full bg-primary-bg text-foreground border-b border-gray-200 dark:border-white/10 transition-colors"
   >
     <nav
       class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"

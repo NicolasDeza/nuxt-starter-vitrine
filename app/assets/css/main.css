@@ -5,7 +5,7 @@
 @layer base {
   :root {
     /* Texte */
-    --text: 0 0% 9%; /* Noir */
+    --foreground: 0 0% 9%; /* Noir */
 
     /* Couleur de marque */
     --primary: 155 100% 43%; /* #00DC82 Vert Nuxt */
@@ -17,7 +17,7 @@
 
   .dark {
     /* Texte */
-    --text: 0 0% 100%; /* Blanc */
+    --foreground: 0 0% 100%; /* Blanc */
 
     /* Couleur de marque (même) */
     --primary: 155 100% 43%;
