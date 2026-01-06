@@ -14,7 +14,7 @@
       </h1>
 
       <!-- Sous-titre -->
-      <p class="max-w-2xl text-lg sm:text-xl text-neutral-300 px-4">
+      <p class="max-w-2xl text-lg sm:text-xl text-white/80 px-4">
         Un modèle de démarrage prêt à l'emploi, basé sur Nuxt. Créez des sites
         web esthétiques, accessibles et performants en quelques minutes.
       </p>
@@ -23,7 +23,7 @@
       <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
         <NuxtLink
           to="#"
-          class="inline-flex items-center gap-2 rounded-md bg-[#00DC82] px-6 py-2 font-semibold text-neutral-900 hover:bg-[#04AB6D] transition"
+          class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2 font-semibold text-white hover:bg-primary-hover transition"
         >
           Commencer
           <span aria-hidden="true" class="text-lg">→</span>

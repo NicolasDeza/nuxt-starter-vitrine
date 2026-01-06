@@ -38,7 +38,7 @@ onUnmounted(() => {
 
 <template>
   <header
-    class="sticky top-0 z-50 w-full border-b border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950 transition-colors"
+    class="sticky top-0 z-50 w-full bg-primary-bg text-text border-b border-gray-200 dark:border-white/10 transition-colors"
   >
     <nav
       class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between"
@@ -65,13 +65,11 @@ onUnmounted(() => {
       </NuxtLink>
 
       <!-- Navigation desktop -->
-      <ul
-        class="hidden md:flex items-center gap-8 font-semibold dark:text-white"
-      >
+      <ul class="hidden md:flex items-center gap-8 font-semibold">
         <li>
           <NuxtLink
             to="/"
-            class="hover:text-neutral-600 dark:hover:text-neutral-300 transition"
+            class="hover:text-gray-600 dark:hover:text-gray-300 transition"
           >
             Accueil
           </NuxtLink>
@@ -79,7 +77,7 @@ onUnmounted(() => {
         <li>
           <NuxtLink
             to="/services"
-            class="hover:text-neutral-600 dark:hover:text-neutral-300 transition"
+            class="hover:text-gray-600 dark:hover:text-gray-300 transition"
           >
             Services
           </NuxtLink>
@@ -87,7 +85,7 @@ onUnmounted(() => {
         <li>
           <NuxtLink
             to="/projets"
-            class="hover:text-neutral-600 dark:hover:text-neutral-300 transition"
+            class="hover:text-gray-600 dark:hover:text-gray-300 transition"
           >
             Projets
           </NuxtLink>
@@ -95,7 +93,7 @@ onUnmounted(() => {
         <li>
           <NuxtLink
             to="/contact"
-            class="hover:text-neutral-600 dark:hover:text-neutral-300 transition"
+            class="hover:text-gray-600 dark:hover:text-gray-300 transition"
           >
             Contact
           </NuxtLink>
@@ -109,14 +107,14 @@ onUnmounted(() => {
           <button
             type="button"
             aria-label="Basculer le thème"
-            class="h-9 w-9 rounded-md border border-neutral-200 dark:border-neutral-700 flex items-center justify-center bg-white hover:bg-neutral-100 dark:bg-neutral-900 dark:hover:bg-neutral-800 transition"
+            class="h-9 w-9 rounded-md border border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:bg-white dark:hover:bg-gray-50 flex items-center justify-center transition"
             @click="toggleTheme"
           >
             <!-- Soleil -->
             <svg
               v-if="colorMode.preference === 'light'"
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
+              class="h-4 w-4 text-black"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -134,7 +132,7 @@ onUnmounted(() => {
             <svg
               v-else
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4"
+              class="h-4 w-4 text-black"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -153,7 +151,7 @@ onUnmounted(() => {
         <!-- CTA desktop -->
         <NuxtLink
           to="/contact"
-          class="hidden sm:inline-flex items-center justify-center rounded-md bg-neutral-900 dark:bg-white px-4 py-2 text-sm font-medium text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition"
+          class="hidden sm:inline-flex items-center justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-hover transition"
         >
           Contact
         </NuxtLink>
@@ -161,7 +159,7 @@ onUnmounted(() => {
         <!-- Hamburger mobile -->
         <button
           type="button"
-          class="md:hidden h-9 w-9 rounded-md border border-neutral-200 dark:border-neutral-700 flex items-center justify-center hover:bg-neutral-100 dark:hover:bg-neutral-800 transition"
+          class="md:hidden h-9 w-9 rounded-md border border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:bg-white dark:hover:bg-gray-50 flex items-center justify-center transition"
           :aria-label="isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
           :aria-expanded="isMenuOpen"
           aria-controls="mobile-menu"
@@ -170,7 +168,7 @@ onUnmounted(() => {
           <svg
             v-if="!isMenuOpen"
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
+            class="h-5 w-5 text-black"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -187,7 +185,7 @@ onUnmounted(() => {
           <svg
             v-else
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5"
+            class="h-5 w-5 text-black"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -216,7 +214,7 @@ onUnmounted(() => {
       <div
         v-if="isMenuOpen"
         id="mobile-menu"
-        class="md:hidden border-t border-neutral-200 dark:border-neutral-800 bg-white dark:bg-neutral-950"
+        class="md:hidden bg-primary-bg border-t border-gray-200 dark:border-white/10"
         role="region"
         aria-label="Menu de navigation mobile"
       >
@@ -246,7 +244,7 @@ onUnmounted(() => {
           <li class="pt-2">
             <NuxtLink
               to="/contact"
-              class="inline-flex w-full justify-center rounded-md bg-neutral-900 dark:bg-white px-4 py-2 text-sm font-medium text-white dark:text-neutral-900 hover:bg-neutral-800 dark:hover:bg-neutral-200 transition"
+              class="inline-flex w-full justify-center rounded-md bg-primary px-4 py-2 text-sm font-medium text-white hover:bg-primary-hover transition"
               @click="closeMenu"
             >
               Contact

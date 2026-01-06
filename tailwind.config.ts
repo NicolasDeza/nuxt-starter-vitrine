@@ -13,7 +13,12 @@ export default <Config>{
   theme: {
     extend: {
       colors: {
-        primary: "#0f172a",
+        text: "hsl(var(--text))",
+        primary: {
+          DEFAULT: "hsl(var(--primary))",
+          hover: "hsl(var(--primary-hover))",
+        },
+        "primary-bg": "hsl(var(--primary-bg))",
       },
     },
   },

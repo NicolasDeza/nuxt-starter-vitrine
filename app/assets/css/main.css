@@ -1,3 +1,29 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  :root {
+    /* Texte */
+    --text: 0 0% 9%; /* Noir */
+
+    /* Couleur de marque */
+    --primary: 155 100% 43%; /* #00DC82 Vert Nuxt */
+    --primary-hover: 155 90% 35%;
+
+    /* Primary background */
+    --primary-bg: 0 0% 100%; /* Blanc */
+  }
+
+  .dark {
+    /* Texte */
+    --text: 0 0% 100%; /* Blanc */
+
+    /* Couleur de marque (même) */
+    --primary: 155 100% 43%;
+    --primary-hover: 155 90% 35%;
+
+    /* Primary background */
+    --primary-bg: 222 47% 11%; /* Bleu foncé #0F172B */
+  }
+}

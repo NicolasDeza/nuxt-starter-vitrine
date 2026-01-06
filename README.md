@@ -73,3 +73,21 @@ bun run preview
 ```
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+
+## 🎨 Dark Mode (Optionnel)
+
+Le starter inclut un dark mode fonctionnel et prêt à l'emploi.
+
+### Utiliser le dark mode
+
+- Toggle déjà intégré dans le header
+- Variables CSS dans `app/assets/css/main.css`
+- Classes Tailwind `dark:` dans les composants
+
+### Désactiver le dark mode
+
+1. Commenter/supprimer le toggle dans `AppHeader.vue`
+2. Supprimer la section `.dark` dans `main.css`
+3. Retirer les classes `dark:` dans les composants
+
+Simple et flexible selon vos besoins !
