@@ -1,6 +1,6 @@
 import withNuxt from "@nuxt/eslint-config";
 
-// Utiliser npm run linit avant commit git
+// Utiliser npm run lint avant commit git
 
 export default withNuxt({
   rules: {

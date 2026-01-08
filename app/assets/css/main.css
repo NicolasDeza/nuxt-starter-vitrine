@@ -8,8 +8,8 @@
     --foreground: 0 0% 9%; /* Noir */
 
     /* Couleur de marque */
-    --primary: 155 100% 43%; /* #00DC82 Vert Nuxt */
-    --primary-hover: 155 90% 35%;
+    --primary: 156 54% 53%; /* #40D190 */
+    --primary-hover: 156 54% 43%;
 
     /* Primary background */
     --primary-bg: 0 0% 100%; /* Blanc */
@@ -20,8 +20,8 @@
     --foreground: 0 0% 100%; /* Blanc */
 
     /* Couleur de marque (même) */
-    --primary: 155 100% 43%;
-    --primary-hover: 155 90% 35%;
+    --primary: 156 54% 53%;
+    --primary-hover: 156 54% 43%;
 
     /* Primary background */
     --primary-bg: 222 47% 11%; /* Bleu foncé #0F172B */

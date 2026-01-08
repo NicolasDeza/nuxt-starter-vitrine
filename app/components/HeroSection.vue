@@ -1,7 +1,7 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="w-full bg-[#0F172B] py-20 md:py-40 lg:py-56">
+  <section class="w-full bg-[#0F172B] py-20 md:py-40 lg:py-[215px]">
     <!-- Wrapper 1440px pour le contenu -->
     <div
       class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-6"

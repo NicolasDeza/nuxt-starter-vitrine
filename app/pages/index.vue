@@ -1,5 +1,8 @@
 <script setup lang="ts"></script>
 
 <template>
-  <HeroSection />
+  <div>
+    <HeroSection />
+    <FeaturesSection />
+  </div>
 </template>
