@@ -4,6 +4,5 @@
   <div>
     <HeroSection />
     <FeaturesSection />
-    <CtaSection />
   </div>
 </template>

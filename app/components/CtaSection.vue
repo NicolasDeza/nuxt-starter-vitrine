@@ -1,7 +1,7 @@
 <template>
-  <section class="w-full bg-[#0F172B] py-10">
+  <section class="w-full bg-[#0F172B] pt-10 pb-24">
     <div class="mx-auto max-w-6xl px-6">
-      <div class="rounded-lg px-6 py-16 text-center dark:bg-white/5">
+      <div class="rounded-lg px-6 py-12 text-center dark:bg-white/5">
         <h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">
           Prêt à démarrer votre prochain projet Nuxt ?
         </h2>
