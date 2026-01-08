@@ -91,3 +91,37 @@ Le starter inclut un dark mode fonctionnel et prêt à l'emploi.
 3. Retirer les classes `dark:` dans les composants
 
 Simple et flexible selon vos besoins !
+
+## 🦶 Footer - Deux Versions Disponibles
+
+Le starter propose **deux versions du footer** pour s'adapter à vos besoins.
+
+### AppFooter.vue (par défaut)
+
+Footer classique avec affichage permanent des liens.
+
+- Simple et direct
+- Idéal pour 5-10 liens
+- Accessible et sémantique
+
+### AppFooterAccordion.vue
+
+Footer avec accordéon sur mobile, grille classique sur desktop.
+
+- Économise l'espace vertical sur mobile
+- Animation smooth avec icône + qui devient ×
+- Idéal pour footers riches (10+ liens)
+
+### Changer de version
+
+Dans `app/layouts/default.vue` :
+
+```vue
+<!-- Version classique (défaut) -->
+<AppFooter />
+
+<!-- Version accordéon mobile -->
+<AppFooterAccordion />
+```
+
+**Performances** : Seul le composant utilisé est inclus dans le bundle final (tree-shaking automatique).
