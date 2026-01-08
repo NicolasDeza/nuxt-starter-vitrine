@@ -49,7 +49,7 @@ const features = [
 </script>
 
 <template>
-  <section class="w-full bg-primary-bg py-24">
+  <section class="w-full bg-primary-bg py-24" aria-label="Fonctionnalités">
     <div class="mx-auto max-w-6xl px-6">
       <!-- Titre -->
       <header class="mx-auto max-w-3xl text-center">

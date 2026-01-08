@@ -1,7 +1,10 @@
 <script setup lang="ts"></script>
 
 <template>
-  <section class="w-full bg-[#0F172B] py-20 md:py-40 lg:py-[215px]">
+  <section
+    class="w-full bg-[#0F172B] py-20 md:py-40 lg:py-[215px]"
+    aria-label="Section d'accueil"
+  >
     <!-- Wrapper 1440px pour le contenu -->
     <div
       class="max-w-[1440px] mx-auto px-4 sm:px-6 lg:px-8 text-center flex flex-col items-center gap-6"
@@ -32,8 +35,9 @@
         <a
           href="#"
           target="_blank"
-          rel="noopener"
+          rel="noopener noreferrer"
           class="inline-flex items-center gap-2 rounded-md bg-white/10 border border-white/20 px-6 py-2 font-semibold text-white hover:bg-white/20 transition"
+          aria-label="Utiliser ce template (ouvre dans un nouvel onglet)"
         >
           <svg
             xmlns="http://www.w3.org/2000/svg"
