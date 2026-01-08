@@ -11,18 +11,23 @@ const year = new Date().getFullYear();
       <!-- Grille -->
       <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
         <!-- Colonne 1 : Branding -->
-        <div class="text-center">
+        <div class="text-center md:text-left">
           <h2 class="text-xl font-semibold text-foreground">
             Nuxt Starter Vitrine
           </h2>
-          <p class="mt-2 text-sm text-foreground/60 mx-auto max-w-[220px]">
+          <p
+            class="mt-2 text-sm text-foreground/60 mx-auto md:mx-0 max-w-[220px]"
+          >
             Une base moderne et performante pour créer des sites Nuxt prêts pour
             la production.
           </p>
         </div>
 
         <!-- Colonne 2 : Navigation -->
-        <nav aria-label="Navigation du pied de page" class="text-center">
+        <nav
+          aria-label="Navigation du pied de page"
+          class="text-center md:text-left"
+        >
           <h2 class="text-sm font-semibold text-foreground">Navigation</h2>
           <ul class="mt-2 space-y-2 text-sm">
             <li>
@@ -61,7 +66,7 @@ const year = new Date().getFullYear();
         </nav>
 
         <!-- Colonne 3 : Ressources -->
-        <nav aria-label="Ressources" class="text-center">
+        <nav aria-label="Ressources" class="text-center md:text-left">
           <h2 class="text-sm font-semibold text-foreground">Ressources</h2>
           <ul class="mt-2 space-y-2 text-sm">
             <li>
