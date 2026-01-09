@@ -74,7 +74,7 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
-## 🎨 Dark Mode (Optionnel)
+## Dark Mode (Optionnel)
 
 Le starter inclut un dark mode fonctionnel et prêt à l'emploi.
 
@@ -92,7 +92,7 @@ Le starter inclut un dark mode fonctionnel et prêt à l'emploi.
 
 Simple et flexible selon vos besoins !
 
-## 🦶 Footer - Deux Versions Disponibles
+## Footer - Deux Versions Disponibles
 
 Le starter propose **deux versions du footer** pour s'adapter à vos besoins.
 
