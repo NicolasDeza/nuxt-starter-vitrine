@@ -144,7 +144,7 @@ onUnmounted(() => {
         <!-- Hamburger mobile -->
         <button
           type="button"
-          class="md:hidden h-9 w-9 rounded-md border border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:bg-white dark:hover:bg-gray-50 flex items-center justify-center transition"
+          class="md:hidden h-9 w-9 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center transition-colors"
           :aria-label="isMenuOpen ? 'Fermer le menu' : 'Ouvrir le menu'"
           :aria-expanded="isMenuOpen"
           aria-controls="mobile-menu"
@@ -153,7 +153,7 @@ onUnmounted(() => {
           <svg
             v-if="!isMenuOpen"
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-black"
+            class="h-5 w-5 text-gray-700 dark:text-gray-300"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
@@ -170,7 +170,7 @@ onUnmounted(() => {
           <svg
             v-else
             xmlns="http://www.w3.org/2000/svg"
-            class="h-5 w-5 text-black"
+            class="h-5 w-5 text-gray-700 dark:text-gray-300"
             fill="none"
             viewBox="0 0 24 24"
             stroke="currentColor"
