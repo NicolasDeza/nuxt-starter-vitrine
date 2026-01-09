@@ -74,6 +74,38 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+## Icônes avec Lucide
+
+Le projet utilise **[Lucide Icons](https://lucide.dev/)** pour les icônes.
+
+### Installation
+
+```bash
+npm install lucide-vue-next
+```
+
+### Utilisation
+
+```vue
+<script setup>
+import { Menu, X, Sun, Moon } from "lucide-vue-next";
+</script>
+
+<template>
+  <Menu :size="20" />
+  <Sun :size="20" class="text-gray-700" />
+</template>
+```
+
+### Avantages
+
+- Icônes modernes et cohérentes
+- Tree-shakable (seules les icônes utilisées sont incluses)
+- Personnalisables via props (size, color, strokeWidth)
+- Compatible avec Tailwind CSS
+
+Voir la [documentation Lucide](https://lucide.dev/guide/packages/lucide-vue-next) pour plus d'exemples.
+
 ## Dark Mode (Optionnel)
 
 Le starter inclut un dark mode fonctionnel et prêt à l'emploi.
