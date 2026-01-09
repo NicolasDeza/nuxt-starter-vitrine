@@ -51,17 +51,19 @@ onUnmounted(() => {
         aria-label="Retour à l'accueil"
         @click="closeMenu"
       >
-        <NuxtImg
-          :src="
-            colorMode.preference === 'dark'
-              ? '/images/logo/logo-dark-nuxt.svg'
-              : '/images/logo/logo-light-nuxt.svg'
-          "
-          alt="Logo Nom du site"
-          class="h-7 w-auto"
-          loading="eager"
-          decoding="async"
-        />
+        <ClientOnly>
+          <NuxtImg
+            :src="
+              colorMode.preference === 'dark'
+                ? '/images/logo/logo-dark-nuxt.svg'
+                : '/images/logo/logo-light-nuxt.svg'
+            "
+            alt="Logo Nom du site"
+            class="h-7 w-auto"
+            loading="eager"
+            decoding="async"
+          />
+        </ClientOnly>
       </NuxtLink>
 
       <!-- Navigation desktop -->
