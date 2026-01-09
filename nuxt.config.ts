@@ -25,4 +25,48 @@ export default defineNuxtConfig({
       to: process.env.NUXT_MAIL_TO || "",
     },
   },
+
+  /* =========================
+   SEO GLOBAL (BASE) – Nuxt Starter
+   ========================= */
+  app: {
+    head: {
+      htmlAttrs: {
+        lang: "fr",
+      },
+
+      // Titre par défaut + template
+      titleTemplate: "%s – Nuxt Starter",
+
+      meta: [
+        {
+          name: "description",
+          content:
+            "Starter Nuxt moderne pour créer des sites vitrines performants, SEO-ready et prêts pour la production.",
+        },
+        { name: "robots", content: "index, follow" },
+        { name: "author", content: "Nuxt Starter" },
+        { name: "theme-color", content: "#0F172B" },
+      ],
+
+      link: [
+        {
+          rel: "icon",
+          type: "image/png",
+          sizes: "48x48",
+          href: "/nuxt-logo.png",
+        },
+        {
+          rel: "icon",
+          type: "image/x-icon",
+          href: "/favicon.ico",
+        },
+        {
+          rel: "apple-touch-icon",
+          sizes: "180x180",
+          href: "/nuxt-logo.png",
+        },
+      ],
+    },
+  },
 });

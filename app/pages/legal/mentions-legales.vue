@@ -2,6 +2,7 @@
 useSeoMeta({
   title: "Mentions Légales",
   description: "Informations légales et mentions obligatoires du site",
+  robots: "noindex, follow",
 });
 </script>
 
