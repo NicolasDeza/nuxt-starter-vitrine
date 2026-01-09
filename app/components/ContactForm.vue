@@ -67,7 +67,7 @@ const submit = async () => {
 
 <template>
   <section
-    class="w-full bg-gradient-to-b from-white to-slate-50/50 dark:from-[#0F172B] dark:to-[#0A0E1A] py-20"
+    class="w-full bg-gradient-to-b from-white to-slate-50/50 dark:from-[#0F172B] dark:to-[#0F172B] py-20"
     aria-label="Formulaire de contact"
   >
     <div class="w-full max-w-6xl mx-auto px-4 sm:px-6">
