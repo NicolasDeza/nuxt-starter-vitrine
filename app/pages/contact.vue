@@ -18,15 +18,15 @@ useSeoMeta({
   ogTitle: "Nuxt Starter Vitrine",
   ogDescription:
     "Base Nuxt moderne avec Tailwind, SEO, Dark Mode, ESLint et Nuxt Image.",
-  ogImage: "https://your-domain.com/og-image.jpg",
-  ogUrl: "https://your-domain.com",
+  ogImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
+  ogUrl: "https://nuxt-starter-vitrine.vercel.app/",
   ogType: "website",
 
   twitterCard: "summary_large_image",
   twitterTitle: "Nuxt Starter Vitrine",
   twitterDescription:
     "Template Nuxt prêt pour la production : SEO, performance et design moderne.",
-  twitterImage: "https://your-domain.com/og-image.jpg",
+  twitterImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
 });
 </script>
 <template>

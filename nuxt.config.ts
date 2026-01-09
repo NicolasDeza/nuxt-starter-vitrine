@@ -8,8 +8,8 @@ export default defineNuxtConfig({
   modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/color-mode"],
 
   colorMode: {
-    preference: "light", // 👈 DEFAULT
-    fallback: "light", // 👈 sécurité
+    preference: "light", //  DEFAULT
+    fallback: "light", // sécurité
     classSuffix: "", // => .dark / .light
     storageKey: "color-mode", // ok par défaut
   },
