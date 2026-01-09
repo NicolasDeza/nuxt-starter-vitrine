@@ -74,15 +74,25 @@ bun run preview
 
 Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
 
+## ⚠️ Avant de commencer
+
+Assurez-vous d'avoir installé toutes les dépendances du projet :
+
+```bash
+npm install
+# ou
+npm i
+```
+
+Cela installera automatiquement tout ce dont vous avez besoin : Tailwind CSS, Color Mode, Lucide Icons, etc.
+
+---
+
 ## Icônes avec Lucide
 
 Le projet utilise **[Lucide Icons](https://lucide.dev/)** pour les icônes.
 
-### Installation
-
-```bash
-npm install lucide-vue-next
-```
+Lucide est déjà inclus dans les dépendances du projet (avec Tailwind, Color Mode, etc.). Un simple `npm install` ou `npm i` installe tout.
 
 ### Utilisation
 
