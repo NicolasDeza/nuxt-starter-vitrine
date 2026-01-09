@@ -93,32 +93,29 @@ onUnmounted(() => {
           <button
             type="button"
             aria-label="Basculer le thème"
-            class="h-9 w-9 rounded-md border border-gray-200 dark:border-gray-700 bg-white hover:bg-gray-50 dark:bg-white dark:hover:bg-gray-50 flex items-center justify-center transition"
+            class="h-9 w-9 rounded-md hover:bg-gray-100 dark:hover:bg-gray-800 flex items-center justify-center transition-colors"
             @click="toggleTheme"
           >
             <!-- Soleil -->
             <svg
               v-if="colorMode.preference === 'light'"
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 text-black"
+              class="h-5 w-5 text-gray-700"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
+              stroke-width="2"
               aria-hidden="true"
             >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M12 3v2m0 14v2m9-9h-2M5 12H3m15.364-6.364-1.414 1.414M7.05 16.95l-1.414 1.414m0-11.314 1.414 1.414m11.314 11.314 1.414 1.414M12 8a4 4 0 100 8 4 4 0 000-8z"
-              />
+              <circle cx="12" cy="12" r="4" />
+              <path d="M12 1v3m0 16v3M4.22 4.22l2.12 2.12m11.32 11.32 2.12 2.12M1 12h3m16 0h3M6.34 19.78l-2.12 2.12M19.78 4.22l-2.12 2.12" />
             </svg>
 
             <!-- Lune -->
             <svg
               v-else
               xmlns="http://www.w3.org/2000/svg"
-              class="h-4 w-4 text-black"
+              class="h-5 w-5 text-gray-300"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
