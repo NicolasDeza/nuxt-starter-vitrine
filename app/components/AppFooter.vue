@@ -68,7 +68,7 @@ const year = new Date().getFullYear();
             </li>
             <li>
               <NuxtLink
-                to="/mentions-legales"
+                to="/legal/mentions-legales"
                 class="text-foreground/60 hover:text-foreground transition"
               >
                 Mentions légales
