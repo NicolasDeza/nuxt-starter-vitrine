@@ -74,22 +74,8 @@ onUnmounted(() => {
             Accueil
           </NuxtLink>
         </li>
-        <li>
-          <NuxtLink
-            to="/services"
-            class="hover:text-gray-600 dark:hover:text-gray-300 transition"
-          >
-            Services
-          </NuxtLink>
-        </li>
-        <li>
-          <NuxtLink
-            to="/projets"
-            class="hover:text-gray-600 dark:hover:text-gray-300 transition"
-          >
-            Projets
-          </NuxtLink>
-        </li>
+     
+       
         <li>
           <NuxtLink
             to="/contact"

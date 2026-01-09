@@ -25,7 +25,9 @@
       <!-- Actions -->
       <div class="mt-6 flex flex-wrap items-center justify-center gap-4">
         <NuxtLink
-          to="#"
+          to="https://github.com/NicolasDeza/nuxt-starter-vitrine"
+          target="_blank"
+          rel="noopener noreferrer"
           class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-2 font-semibold text-white hover:bg-primary-hover transition"
         >
           Commencer
@@ -33,7 +35,7 @@
         </NuxtLink>
 
         <a
-          href="#"
+          href="https://github.com/NicolasDeza/nuxt-starter-vitrine"
           target="_blank"
           rel="noopener noreferrer"
           class="inline-flex items-center gap-2 rounded-md bg-white/10 border border-white/20 px-6 py-2 font-semibold text-white hover:bg-white/20 transition"

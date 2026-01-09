@@ -89,22 +89,7 @@ const toggleSection = (section: string) => {
                   Accueil
                 </NuxtLink>
               </li>
-              <li>
-                <NuxtLink
-                  to="/contact"
-                  class="text-foreground/60 hover:text-foreground transition"
-                >
-                  Services
-                </NuxtLink>
-              </li>
-              <li>
-                <NuxtLink
-                  to="/contact"
-                  class="text-foreground/60 hover:text-foreground transition"
-                >
-                  Projets
-                </NuxtLink>
-              </li>
+             
               <li>
                 <NuxtLink
                   to="/contact"

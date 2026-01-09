@@ -18,7 +18,9 @@
           class="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row"
         >
           <NuxtLink
-            to="#"
+            to="https://github.com/NicolasDeza/nuxt-starter-vitrine"
+            target="_blank"
+            rel="noopener noreferrer"
             class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-medium text-white transition hover:bg-primary-hover"
           >
             Commencer
@@ -26,7 +28,7 @@
           </NuxtLink>
 
           <NuxtLink
-            to="https://github.com/"
+            to="https://github.com/NicolasDeza/nuxt-starter-vitrine"
             target="_blank"
             rel="noopener noreferrer"
             class="inline-flex items-center gap-2 rounded-md border border-white/20 px-6 py-3 font-medium text-white transition hover:bg-white/5"

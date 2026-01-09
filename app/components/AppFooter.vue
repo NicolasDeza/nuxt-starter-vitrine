@@ -38,22 +38,8 @@ const year = new Date().getFullYear();
                 Accueil
               </NuxtLink>
             </li>
-            <li>
-              <NuxtLink
-                to="/contact"
-                class="text-foreground/60 hover:text-foreground transition"
-              >
-                Services
-              </NuxtLink>
-            </li>
-            <li>
-              <NuxtLink
-                to="/contact"
-                class="text-foreground/60 hover:text-foreground transition"
-              >
-                Projets
-              </NuxtLink>
-            </li>
+          
+         
             <li>
               <NuxtLink
                 to="/contact"
@@ -71,7 +57,7 @@ const year = new Date().getFullYear();
           <ul class="mt-2 space-y-2 text-sm">
             <li>
               <NuxtLink
-                to="https://github.com/"
+                to="https://github.com/NicolasDeza/nuxt-starter-vitrine"
                 target="_blank"
                 rel="noopener noreferrer"
                 class="text-foreground/60 hover:text-foreground transition"
@@ -100,7 +86,7 @@ const year = new Date().getFullYear();
         <p class="mt-2">
           Site réalisé par
           <NuxtLink
-            to="https://votre-site.com"
+            to="https://www.nicolasdeza.com/"
             target="_blank"
             rel="noopener noreferrer"
             class="text-foreground/70 hover:text-foreground transition underline"
