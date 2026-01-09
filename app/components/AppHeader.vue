@@ -209,16 +209,7 @@ onUnmounted(() => {
               Accueil
             </NuxtLink>
           </li>
-          <li>
-            <NuxtLink to="/services" class="block py-2" @click="closeMenu">
-              Services
-            </NuxtLink>
-          </li>
-          <li>
-            <NuxtLink to="/projets" class="block py-2" @click="closeMenu">
-              Projets
-            </NuxtLink>
-          </li>
+          
           <li>
             <NuxtLink to="/contact" class="block py-2" @click="closeMenu">
               Contact
