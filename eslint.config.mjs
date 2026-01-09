@@ -14,7 +14,7 @@ export default withNuxt({
       "error",
       {
         html: {
-          void: "always", // <input />
+          void: "always",
           normal: "always",
           component: "always",
         },
