@@ -46,7 +46,6 @@ export default defineNuxtConfig({
         },
         { name: "robots", content: "index, follow" },
         { name: "author", content: "Nuxt Starter" },
-        { name: "theme-color", content: "#0F172B" },
       ],
 
       link: [
