@@ -19,8 +19,6 @@
         >
           <NuxtLink
             to="/contact"
-            target="_blank"
-            rel="noopener noreferrer"
             class="inline-flex items-center gap-2 rounded-md bg-primary px-6 py-3 font-medium text-white transition hover:bg-primary-hover"
           >
             Contactez-nous
