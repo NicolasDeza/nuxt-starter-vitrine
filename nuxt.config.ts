@@ -13,4 +13,16 @@ export default defineNuxtConfig({
     classSuffix: "", // => .dark / .light
     storageKey: "color-mode", // ok par défaut
   },
+  runtimeConfig: {
+    smtp: {
+      host: process.env.NUXT_SMTP_HOST || "",
+      port: Number(process.env.NUXT_SMTP_PORT) || 587,
+      user: process.env.NUXT_SMTP_USER || "",
+      pass: process.env.NUXT_SMTP_PASS || "",
+    },
+    mail: {
+      from: process.env.NUXT_MAIL_FROM || "",
+      to: process.env.NUXT_MAIL_TO || "",
+    },
+  },
 });
