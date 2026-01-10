@@ -7,7 +7,7 @@ const year = new Date().getFullYear();
     class="w-full border-t border-foreground/20 bg-primary-bg"
     aria-label="Pied de page"
   >
-    <div class="mx-auto max-w-6xl px-6 pt-12 pb-4 md:pb-6">
+    <div class="mx-auto max-w-[1440px] px-6 pt-12 pb-4 md:pb-6">
       <!-- Grille -->
       <div class="grid gap-8 sm:grid-cols-2 md:grid-cols-3">
         <!-- Colonne 1 : Branding -->
