@@ -11,7 +11,7 @@
     >
       <!-- Titre principal -->
       <h1
-        class="text-4xl sm:text-5xl lg:text-7xl font-bold tracking-tight text-white"
+        class="text-5xl sm:text-6xl lg:text-7xl font-bold tracking-tight text-white"
       >
         Nuxt JS Starter Template
       </h1>
