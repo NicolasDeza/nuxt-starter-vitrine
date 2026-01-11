@@ -119,8 +119,30 @@ const ContactSchema = z.object({
 
 export default defineEventHandler(async (event) => {
   const body = await readBody(event);
+  const config = useRuntimeConfig();
 
-  const parsed = ContactSchema.safeParse(body);
+  const { turnstileToken, ...data } = body;
+
+  // 1️⃣ Vérifier Turnstile
+  const verify = await $fetch<{
+    success: boolean;
+  }>("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
+    method: "POST",
+    body: new URLSearchParams({
+      secret: config.turnstileSecretKey,
+      response: turnstileToken,
+    }),
+  });
+
+  if (!verify.success) {
+    throw createError({
+      statusCode: 403,
+      message: "Captcha invalide",
+    });
+  }
+
+  // 2️⃣ Validation Zod
+  const parsed = ContactSchema.safeParse(data);
   if (!parsed.success) {
     throw createError({
       statusCode: 400,
@@ -129,12 +151,11 @@ export default defineEventHandler(async (event) => {
   }
 
   const { name, email, message } = parsed.data;
-  const config = useRuntimeConfig();
 
   const transporter = nodemailer.createTransport({
     host: config.smtp.host,
     port: config.smtp.port,
-    secure: false, // port 587 = STARTTLS
+    secure: false,
     auth: {
       user: config.smtp.user,
       pass: config.smtp.pass,

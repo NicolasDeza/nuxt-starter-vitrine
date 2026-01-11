@@ -3,6 +3,20 @@ import { Mail, MapPin, Send } from "lucide-vue-next"
 import { useContactForm } from "~/composables/useContactForm"
 
 const { form, errors, loading, success, submit } = useContactForm()
+const config = useRuntimeConfig()
+
+declare global {
+  interface Window {
+    onTurnstileSuccess?: (token: string) => void
+  }
+}
+
+if (typeof window !== "undefined") {
+  window.onTurnstileSuccess = (token: string) => {
+    const state = useState<string | null>("turnstile")
+    state.value = token
+  }
+}
 </script>
 
 
@@ -219,6 +233,12 @@ const { form, errors, loading, success, submit } = useContactForm()
               {{ errors.message }}
             </p>
           </div>
+
+          <div
+            class="cf-turnstile mb-4"
+            :data-sitekey="config.public.turnstileSiteKey"
+            data-callback="onTurnstileSuccess"
+          />
 
           <button
             type="submit"

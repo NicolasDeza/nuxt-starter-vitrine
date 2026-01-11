@@ -167,3 +167,44 @@ Dans `app/layouts/default.vue` :
 ```
 
 **Performances** : Seul le composant utilisé est inclus dans le bundle final (tree-shaking automatique).
+
+---
+
+## Protection anti-spam (Turnstile)
+
+Le starter inclut **Cloudflare Turnstile** pour protéger votre formulaire de contact contre le spam.
+
+### Configuration par défaut
+
+Par défaut, le starter utilise des **clés de test Cloudflare** qui fonctionnent sans configuration :
+
+- Le captcha s'affiche et se valide automatiquement
+- Idéal pour le développement local
+- Aucune configuration requise pour démarrer
+
+### Activer la protection réelle (Production)
+
+Pour activer une vraie protection anti-spam :
+
+1. **Créez un compte Cloudflare** (gratuit) sur [dash.cloudflare.com](https://dash.cloudflare.com)
+2. **Allez dans Turnstile** et créez un nouveau widget
+3. **Créez un site avec votre domaine** (ou `localhost` pour les tests)
+4. **Récupérez vos clés** (Site Key et Secret Key)
+5. **Remplacez dans `.env`** :
+
+```env
+NUXT_PUBLIC_TURNSTILE_SITE_KEY=votre_site_key
+TURNSTILE_SECRET_KEY=votre_secret_key
+```
+
+6. Redémarrez le serveur de développement
+
+### Désactiver Turnstile
+
+Si vous ne souhaitez pas utiliser de captcha :
+
+1. Supprimez le widget dans `ContactForm.vue`
+2. Retirez la vérification dans `server/api/contact.post.ts`
+3. Supprimez le script dans `nuxt.config.ts`
+
+**Note** : Les vrais starters professionnels (Next.js, Nuxt UI Pro, etc.) ne fournissent jamais de clés API tierces. Chaque développeur doit créer ses propres comptes.

@@ -1,12 +1,12 @@
 import { reactive, ref } from "vue";
 import type { ZodType } from "zod";
-
 import type { FetchError } from "ofetch";
 
 type UseFormOptions<T extends Record<string, unknown>> = {
   initialValues: T;
   schema: ZodType<T>;
   endpoint: string;
+  getCaptchaToken?: () => string | null;
 };
 
 export function useForm<T extends Record<string, unknown>>(
@@ -39,9 +39,14 @@ export function useForm<T extends Record<string, unknown>>(
     success.value = false;
 
     try {
+      const captchaToken = options.getCaptchaToken?.();
+
       await $fetch(options.endpoint, {
         method: "POST",
-        body: form,
+        body: {
+          ...form,
+          turnstileToken: captchaToken,
+        },
       });
 
       success.value = true;

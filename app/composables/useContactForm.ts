@@ -8,6 +8,8 @@ const contactSchema = z.object({
 });
 
 export function useContactForm() {
+  const turnstile = useState<string | null>("turnstile");
+
   return useForm({
     initialValues: {
       name: "",
@@ -16,5 +18,6 @@ export function useContactForm() {
     },
     schema: contactSchema,
     endpoint: "/api/contact",
+    getCaptchaToken: () => turnstile.value,
   });
 }

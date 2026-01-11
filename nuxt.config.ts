@@ -24,6 +24,10 @@ export default defineNuxtConfig({
       from: process.env.NUXT_MAIL_FROM || "",
       to: process.env.NUXT_MAIL_TO || "",
     },
+    turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY,
+    public: {
+      turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY,
+    },
   },
 
   /* =========================
@@ -64,6 +68,14 @@ export default defineNuxtConfig({
           rel: "apple-touch-icon",
           sizes: "180x180",
           href: "/nuxt-logo.png",
+        },
+      ],
+
+      script: [
+        {
+          src: "https://challenges.cloudflare.com/turnstile/v0/api.js",
+          async: true,
+          defer: true,
         },
       ],
     },
