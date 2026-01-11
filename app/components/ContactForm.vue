@@ -67,8 +67,8 @@ onBeforeUnmount(() => {
     class="w-full bg-gradient-to-b from-white to-slate-50/50 dark:from-[#0F172B] dark:to-[#0F172B] py-20"
     aria-label="Formulaire de contact"
   >
-    <div class="w-full max-w-6xl mx-auto px-4 sm:px-6">
-      <div class="grid md:grid-cols-2 gap-8 md:gap-12">
+    <div class="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12">
         <!-- Colonne gauche : Informations -->
         <div class="space-y-8">
           <div class="space-y-4">
