@@ -51,7 +51,7 @@ useSeoMeta({
           </div>
           <div>
             <h3 class="font-semibold text-white mb-2">
-              🔒 Protection anti-spam intégrée (Cloudflare Turnstile)
+              Protection anti-spam intégrée (Cloudflare Turnstile)
             </h3>
             <p class="text-sm text-white/80 mb-3">
               Le formulaire utilise des <strong>clés de test</strong> par
