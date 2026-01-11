@@ -1,69 +1,10 @@
 <script setup lang="ts">
-import { reactive, ref } from "vue";
-import type { FetchError } from "ofetch";
-import { Mail, MapPin, Send } from "lucide-vue-next";
+import { Mail, MapPin, Send } from "lucide-vue-next"
+import { useContactForm } from "~/composables/useContactForm"
 
-const form = reactive({
-  name: "",
-  email: "",
-  message: "",
-});
-
-const errors = ref<Record<string, string>>({});
-const loading = ref(false);
-const success = ref(false);
-
-const validateForm = () => {
-  errors.value = {};
-  let isValid = true;
-
-  if (!form.name.trim() || form.name.trim().length < 2) {
-    errors.value.name = "Minimum 2 caractères requis";
-    isValid = false;
-  }
-
-  if (!form.email.trim() || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(form.email)) {
-    errors.value.email = "Email invalide";
-    isValid = false;
-  }
-
-  if (!form.message.trim() || form.message.trim().length < 10) {
-    errors.value.message = "Minimum 10 caractères requis";
-    isValid = false;
-  }
-
-  return isValid;
-};
-
-const submit = async () => {
-  if (!validateForm()) return;
-
-  success.value = false;
-  loading.value = true;
-
-  try {
-    await $fetch("/api/contact", {
-      method: "POST",
-      body: {
-        name: form.name.trim(),
-        email: form.email.trim().toLowerCase(),
-        message: form.message.trim(),
-      },
-    });
-    success.value = true;
-    form.name = form.email = form.message = "";
-    errors.value = {};
-  } catch (error: unknown) {
-    const fetchError = error as FetchError<{ message?: string }>;
-    errors.value.global = fetchError.data?.message || "Erreur lors de l'envoi";
-  } finally {
-    loading.value = false;
-  }
-};
-
-
-
+const { form, errors, loading, success, submit } = useContactForm()
 </script>
+
 
 <template>
   <section
