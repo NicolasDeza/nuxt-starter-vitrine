@@ -37,7 +37,7 @@ useSeoMeta({
     <!-- Info développeur : Anti-spam (en haut, fond bleu permanent) -->
     <div class="w-full bg-[#0F172B] py-16 sm:py-20">
       <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <p class="text-2xl sm:text-4xl text-center font-bold text-white mb-6">
+        <p class="text-3xl sm:text-4xl text-center font-bold text-white mb-6">
           Page Contact
         </p>
         <div
