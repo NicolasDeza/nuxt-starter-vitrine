@@ -123,7 +123,7 @@ export default defineEventHandler(async (event) => {
 
   const { turnstileToken, ...data } = body;
 
-  // 1️⃣ Vérifier Turnstile
+  // 1️ Vérifier Turnstile
   const verify = await $fetch<{
     success: boolean;
   }>("https://challenges.cloudflare.com/turnstile/v0/siteverify", {
@@ -141,7 +141,7 @@ export default defineEventHandler(async (event) => {
     });
   }
 
-  // 2️⃣ Validation Zod
+  // 2️ Validation Zod
   const parsed = ContactSchema.safeParse(data);
   if (!parsed.success) {
     throw createError({

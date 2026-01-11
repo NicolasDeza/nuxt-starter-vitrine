@@ -1,22 +1,64 @@
 <script setup lang="ts">
-import { Mail, MapPin, Send } from "lucide-vue-next"
+import { ref, onMounted, onBeforeUnmount } from "vue"
+import { Mail, MapPin, Send, ShieldCheck } from "lucide-vue-next"
 import { useContactForm } from "~/composables/useContactForm"
 
 const { form, errors, loading, success, submit } = useContactForm()
 const config = useRuntimeConfig()
 
+const widgetId = ref<string | null>(null)
+
 declare global {
   interface Window {
-    onTurnstileSuccess?: (token: string) => void
+    turnstile?: {
+      render: (selector: string, options: { sitekey: string; callback: (token: string) => void }) => string
+      remove: (widgetId: string) => void
+    }
   }
 }
 
-if (typeof window !== "undefined") {
-  window.onTurnstileSuccess = (token: string) => {
-    const state = useState<string | null>("turnstile")
-    state.value = token
+onMounted(() => {
+  const state = useState<string | null>("turnstile")
+
+  const renderWidget = () => {
+    if (window.turnstile && !widgetId.value) {
+      try {
+        widgetId.value = window.turnstile.render("#cf-turnstile-container", {
+          sitekey: config.public.turnstileSiteKey,
+          callback: (token: string) => {
+            state.value = token
+          },
+        })
+      } catch (e) {
+        console.error("Erreur rendu Turnstile:", e)
+      }
+    }
   }
-}
+
+  // Attendre que Turnstile soit chargé
+  if (window.turnstile) {
+    renderWidget()
+  } else {
+    const interval = setInterval(() => {
+      if (window.turnstile) {
+        clearInterval(interval)
+        renderWidget()
+      }
+    }, 100)
+
+    setTimeout(() => clearInterval(interval), 5000)
+  }
+})
+
+onBeforeUnmount(() => {
+  if (widgetId.value && window.turnstile) {
+    try {
+      window.turnstile.remove(widgetId.value)
+    } catch {
+      // Ignorer les erreurs de nettoyage
+    }
+  }
+})
 </script>
 
 
@@ -234,11 +276,15 @@ if (typeof window !== "undefined") {
             </p>
           </div>
 
+          <!-- Turnstile widget (rendu forcé manuellement) -->
+          <div id="cf-turnstile-container" class="mb-4" />
+
           <div
-            class="cf-turnstile mb-4"
-            :data-sitekey="config.public.turnstileSiteKey"
-            data-callback="onTurnstileSuccess"
-          />
+            class="flex items-center justify-center gap-2 text-xs text-foreground/50 dark:text-white/50 mb-2"
+          >
+            <ShieldCheck :size="14" class="text-primary" />
+            <span>Formulaire protégé contre le spam</span>
+          </div>
 
           <button
             type="submit"
