@@ -36,7 +36,7 @@ useSeoMeta({
     <ContactForm />
 
     <!-- Info développeur : Anti-spam -->
-    <div class="w-full bg-primary-bg py-12">
+    <div class="w-full bg-primary-bg pt-6 pb-16 sm:pt-12 sm:pb-20">
       <div class="max-w-4xl mx-auto px-4 sm:px-6">
         <div
           class="p-6 rounded-xl bg-primary/5 dark:bg-white/5 border border-primary/20 dark:border-white/20"
