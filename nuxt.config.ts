@@ -7,12 +7,15 @@ export default defineNuxtConfig({
 
   modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/color-mode"],
 
+  // Dark mode
   colorMode: {
     preference: "light", //  DEFAULT
     fallback: "light", // sécurité
     classSuffix: "", // => .dark / .light
     storageKey: "color-mode", // ok par défaut
   },
+
+  // Config SMTP
   runtimeConfig: {
     smtp: {
       host: process.env.NUXT_SMTP_HOST || "",
