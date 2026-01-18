@@ -276,8 +276,13 @@ onBeforeUnmount(() => {
             </p>
           </div>
 
-          <!-- Turnstile widget (rendu forcé manuellement) -->
-          <div id="cf-turnstile-container" class="mb-4" />
+                    <!-- Turnstile widget (rendu forcé manuellement) -->
+ <div class="mb-4">
+  <div
+    id="cf-turnstile-container"
+    class="min-h-[70px] flex items-center"
+  />
+</div>
 
           <div
             class="flex items-center justify-center gap-2 text-xs text-foreground/50 dark:text-white/50 mb-2"
