@@ -67,6 +67,7 @@ onUnmounted(() => {
       </NuxtLink>
 
       <!-- Navigation desktop -->
+      <!-- Position: mx-auto (centré) | mr-auto ml-8 (collé au logo) | ml-auto mr-8 (collé à droite) -->
       <ul class="hidden md:flex items-center gap-8 font-semibold">
         <li>
           <NuxtLink
