@@ -9,27 +9,36 @@ export default defineNuxtConfig({
 
   // Dark mode
   colorMode: {
-    preference: "light", //  DEFAULT
-    fallback: "light", // sécurité
-    classSuffix: "", // => .dark / .light
-    storageKey: "color-mode", // ok par défaut
+    preference: "light",
+    fallback: "light",
+    classSuffix: "",
+    storageKey: "color-mode",
   },
 
-  // Config SMTP
+  // Runtime config (server + public)
   runtimeConfig: {
+    // ===== Server only =====
     smtp: {
       host: process.env.NUXT_SMTP_HOST || "",
       port: Number(process.env.NUXT_SMTP_PORT) || 587,
       user: process.env.NUXT_SMTP_USER || "",
       pass: process.env.NUXT_SMTP_PASS || "",
     },
+
     mail: {
       from: process.env.NUXT_MAIL_FROM || "",
       to: process.env.NUXT_MAIL_TO || "",
     },
+
     turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY,
+
+    // ===== Public (client) =====
     public: {
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY,
+
+      // 🔥 Matomo (Analytics RGPD)
+      matomoUrl: process.env.NUXT_PUBLIC_MATOMO_URL || "",
+      matomoSiteId: process.env.NUXT_PUBLIC_MATOMO_SITE_ID || "1",
     },
   },
 
@@ -42,7 +51,6 @@ export default defineNuxtConfig({
         lang: "fr",
       },
 
-      // Titre par défaut + template
       titleTemplate: "%s – Nuxt Starter",
 
       meta: [
