@@ -163,7 +163,7 @@ const toggleSection = (section) => {
               </li>
               <li>
                 <NuxtLink
-                  to="/mentions-legales"
+                  to="/legal/mentions-legales"
                   class="text-foreground/60 hover:text-foreground transition"
                 >
                   Mentions légales

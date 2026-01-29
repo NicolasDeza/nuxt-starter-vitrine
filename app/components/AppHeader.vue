@@ -200,7 +200,7 @@ onUnmounted(() => {
       <div
         v-if="isMenuOpen"
         id="mobile-menu"
-        class="md:hidden bg-primary-bg border-t border-gray-200 dark:border-white/10"
+        class="absolute top-16 left-0 right-0 md:hidden bg-primary-bg border-t border-gray-200 dark:border-white/10 shadow-lg"
         role="region"
         aria-label="Menu de navigation mobile"
       >
