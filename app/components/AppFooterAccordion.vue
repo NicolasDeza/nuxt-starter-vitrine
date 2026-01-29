@@ -1,13 +1,13 @@
-<script setup lang="ts">
+<script setup>
 const year = new Date().getFullYear();
 
 // État pour gérer l'ouverture des accordéons (mobile uniquement)
-const openSections = ref<Record<string, boolean>>({
+const openSections = ref({
   navigation: false,
   resources: false,
 });
 
-const toggleSection = (section: string) => {
+const toggleSection = (section) => {
   openSections.value[section] = !openSections.value[section];
 };
 </script>

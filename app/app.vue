@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { useRouter } from 'vue-router'
 
 // Gestion matomo en SPA

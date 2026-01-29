@@ -1,11 +1,9 @@
-<script setup lang="ts">
-import type { Component } from "vue";
-
-defineProps<{
-  title: string;
-  description: string;
-  icon: Component;
-}>();
+<script setup>
+defineProps({
+  title: { type: String, required: true },
+  description: { type: String, required: true },
+  icon: { type: Object, required: true },
+})
 </script>
 
 <template>
@@ -18,6 +16,7 @@ defineProps<{
     >
       <component :is="icon" class="h-6 w-6" />
     </div>
+
     <!-- Texte -->
     <div>
       <h3 class="font-semibold text-foreground">

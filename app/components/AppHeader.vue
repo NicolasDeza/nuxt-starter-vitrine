@@ -1,4 +1,4 @@
-<script setup lang="ts">
+<script setup>
 import { ref, onMounted, onUnmounted } from "vue";
 import { useColorMode } from "#imports";
 
@@ -20,8 +20,8 @@ const toggleTheme = () => {
   colorMode.preference = colorMode.preference === "dark" ? "light" : "dark";
 };
 
-// Fermer le menu avec la touche Escape ( accèssibilité)
-const handleKeydown = (event: KeyboardEvent) => {
+// Fermer le menu avec la touche Escape (accessibilité)
+const handleKeydown = (event) => {
   if (event.key === "Escape" && isMenuOpen.value) {
     closeMenu();
   }

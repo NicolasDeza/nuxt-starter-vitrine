@@ -9,6 +9,8 @@ export default withNuxt({
     "no-console": "off",
     "no-debugger": "off",
 
+    "vue/require-default-prop": "off",
+
     // Autoriser le self-closing sur les void elements HTML (input, img, br, etc.)
     "vue/html-self-closing": [
       "error",

@@ -1,4 +1,4 @@
-<script setup lang="ts"></script>
+<script setup></script>
 
 <!-- layouts/default.vue -->
 <template>
@@ -9,6 +9,6 @@
       <slot />
     </main>
     <CtaSection />
-    <AppFooter />
+    <AppFooterAccordion />
   </div>
 </template>
