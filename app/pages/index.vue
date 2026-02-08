@@ -1,12 +1,14 @@
 <script setup>
-  useHead({
+const canonical = useCanonical();
+
+useHead(() => ({
   link: [
     {
       rel: "canonical",
-      href: useRequestURL().href, 
+      href: canonical.value,
     },
   ],
-});
+}));
 
 useSeoMeta({
   title: "Nuxt Starter Vitrine",

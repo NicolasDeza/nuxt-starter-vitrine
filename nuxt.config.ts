@@ -5,7 +5,11 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
-  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/color-mode"],
+  modules: ["@nuxtjs/tailwindcss", "@nuxt/image", "@nuxtjs/color-mode", "@nuxtjs/sitemap"],
+
+  site: {
+    url: process.env.NUXT_PUBLIC_SITE_URL || "https://nuxt-starter-vitrine.vercel.app",
+  },
 
   // Dark mode
   colorMode: {
@@ -34,6 +38,7 @@ export default defineNuxtConfig({
 
     // ===== Public (client) =====
     public: {
+      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://www.cgrenov.be",
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY,
 
       // 🔥 Matomo (Analytics RGPD)

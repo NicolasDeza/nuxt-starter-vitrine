@@ -1,4 +1,15 @@
-<script setup lang="ts">
+<script setup>
+const canonical = useCanonical();
+
+useHead(() => ({
+  link: [
+    {
+      rel: "canonical",
+      href: canonical.value,
+    },
+  ],
+}));
+
 useSeoMeta({
   title: "Politique de Confidentialité",
   description: "Politique de confidentialité et protection des données personnelles",

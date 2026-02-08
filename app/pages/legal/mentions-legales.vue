@@ -1,4 +1,15 @@
-<script setup lang="ts">
+<script setup>
+const canonical = useCanonical();
+
+useHead(() => ({
+  link: [
+    {
+      rel: "canonical",
+      href: canonical.value,
+    },
+  ],
+}));
+
 useSeoMeta({
   title: "Mentions Légales",
   description: "Informations légales et mentions obligatoires du site",

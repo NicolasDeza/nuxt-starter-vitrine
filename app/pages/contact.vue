@@ -1,14 +1,16 @@
 <script setup>
 import { ShieldCheck } from "lucide-vue-next"
 
-useHead({
+const canonical = useCanonical();
+
+useHead(() => ({
   link: [
     {
       rel: "canonical",
-      href: useRequestURL().href,
+      href: canonical.value,
     },
   ],
-});
+}));
 
 useSeoMeta({
   title: "Contact - Nuxt Starter",
