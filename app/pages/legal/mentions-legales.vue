@@ -1,5 +1,9 @@
 <script setup>
 const canonical = useCanonical();
+const seo = {
+  title: "Mentions légales",
+  description: "Informations légales et mentions obligatoires du site",
+};
 
 useHead(() => ({
   link: [
@@ -10,9 +14,15 @@ useHead(() => ({
   ],
 }));
 
+useDefaultOgImage({
+  title: seo.title,
+  description: seo.description,
+  eyebrow: "Page légale",
+});
+
 useSeoMeta({
-  title: "Mentions Légales",
-  description: "Informations légales et mentions obligatoires du site",
+  title: seo.title,
+  description: seo.description,
   robots: "noindex, follow",
 });
 </script>
@@ -31,7 +41,7 @@ useSeoMeta({
           <h1
             class="text-4xl sm:text-5xl font-bold text-foreground dark:text-white leading-tight"
           >
-            Mentions Légales
+            Mentions légales
           </h1>
           <p class="text-lg text-foreground/70 dark:text-white/70">
             Dernière mise à jour : 9 janvier 2026

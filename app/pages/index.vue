@@ -1,5 +1,11 @@
 <script setup>
 const canonical = useCanonical();
+const seo = {
+  title: "Nuxt Starter Vitrine",
+  description:
+    "Template Nuxt moderne pour creer des sites vitrines performants, SEO-ready et prets pour la production.",
+};
+const socialDescription = "Base Nuxt moderne avec Tailwind, SEO, Dark Mode, ESLint et Nuxt Image.";
 
 useHead(() => ({
   link: [
@@ -10,30 +16,24 @@ useHead(() => ({
   ],
 }));
 
+useDefaultOgImage({
+  title: seo.title,
+  description: socialDescription,
+});
+
 useSeoMeta({
-  title: "Nuxt Starter Vitrine",
-  description:
-    "Template Nuxt moderne pour créer des sites vitrines performants, SEO-ready et prêts pour la production.",
-
+  title: seo.title,
+  description: seo.description,
   robots: "index, follow",
-
-  ogTitle: "Nuxt Starter Vitrine",
-  ogDescription:
-    "Base Nuxt moderne avec Tailwind, SEO, Dark Mode, ESLint et Nuxt Image.",
-  ogImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
-  ogUrl: "https://nuxt-starter-vitrine.vercel.app/",
+  ogTitle: seo.title,
+  ogDescription: socialDescription,
+  ogUrl: canonical,
   ogType: "website",
-
   twitterCard: "summary_large_image",
-  twitterTitle: "Nuxt Starter Vitrine",
-  twitterDescription:
-    "Template Nuxt prêt pour la production : SEO, performance et design moderne.",
-  twitterImage: "https://nuxt-starter-vitrine.vercel.app/og-starter.jpg",
+  twitterTitle: seo.title,
+  twitterDescription: socialDescription,
 });
 </script>
-
-
-
 
 <template>
   <div>

@@ -13,9 +13,12 @@
   "dependencies": {
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/color-mode": "^4.0.0",
+    "@unhead/vue": "^2.1.13",
     "lucide-vue-next": "^0.562.0",
     "nodemailer": "^7.0.12",
     "nuxt": "^4.2.2",
+    "nuxt-og-image": "^6.3.3",
+    "unstorage": "^1.17.5",
     "vue": "^3.5.26",
     "vue-router": "^4.6.4",
     "zod": "^4.3.5"
@@ -24,7 +27,10 @@
     "@nuxt/eslint": "^1.12.1",
     "@nuxtjs/sitemap": "^7.6.0",
     "@nuxtjs/tailwindcss": "^6.14.0",
+    "@resvg/resvg-js": "^2.6.2",
     "@types/nodemailer": "^7.0.4",
-    "eslint": "^9.39.2"
+    "eslint": "^9.39.2",
+    "satori": "^0.26.0",
+    "tailwindcss": "^3.4.19"
   }
 }

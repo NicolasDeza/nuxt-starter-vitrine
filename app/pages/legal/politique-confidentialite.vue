@@ -1,5 +1,9 @@
 <script setup>
 const canonical = useCanonical();
+const seo = {
+  title: "Politique de confidentialité",
+  description: "Politique de confidentialité et protection des données personnelles",
+};
 
 useHead(() => ({
   link: [
@@ -10,9 +14,15 @@ useHead(() => ({
   ],
 }));
 
+useDefaultOgImage({
+  title: seo.title,
+  description: seo.description,
+  eyebrow: "Protection des données",
+});
+
 useSeoMeta({
-  title: "Politique de Confidentialité",
-  description: "Politique de confidentialité et protection des données personnelles",
+  title: seo.title,
+  description: seo.description,
   robots: "noindex, follow",
 });
 </script>
@@ -31,7 +41,7 @@ useSeoMeta({
           <h1
             class="text-4xl sm:text-5xl font-bold text-foreground dark:text-white leading-tight"
           >
-            Politique de Confidentialité
+            Politique de confidentialité
           </h1>
           <p class="text-lg text-foreground/70 dark:text-white/70">
             Dernière mise à jour : 21 janvier 2026
@@ -186,7 +196,7 @@ useSeoMeta({
             <ul class="text-foreground/80 dark:text-white/80 list-disc pl-6 space-y-2">
               <li><strong>Droit d'accès</strong> : obtenir une copie de vos données</li>
               <li><strong>Droit de rectification</strong> : corriger vos données inexactes</li>
-              <li><strong>Droit à l'effacement</strong> : supprimer vos données (« droit à l'oubli »)</li>
+              <li><strong>Droit à l'effacement</strong> : supprimer vos données</li>
               <li><strong>Droit à la limitation</strong> : limiter le traitement de vos données</li>
               <li><strong>Droit à la portabilité</strong> : recevoir vos données dans un format structuré</li>
               <li><strong>Droit d'opposition</strong> : vous opposer au traitement de vos données</li>
