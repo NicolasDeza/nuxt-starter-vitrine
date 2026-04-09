@@ -28,7 +28,7 @@ useSeoMeta({
 </script>
 
 <template>
-  <div class="min-h-screen bg-gradient-to-b from-white to-slate-50/50 dark:from-[#0F172B] dark:to-[#0A0E1A] py-20">
+  <div class="min-h-screen bg-linear-to-b from-white to-slate-50/50 dark:from-[#0F172B] dark:to-[#0A0E1A] py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="space-y-8">
         <!-- En-tête -->
