@@ -1,5 +1,14 @@
 import tailwindcss from "@tailwindcss/vite";
 
+const siteUrl =
+  process.env.NUXT_SITE_URL
+  || process.env.NUXT_PUBLIC_SITE_URL
+  || "https://nuxt-starter-vitrine.vercel.app";
+
+const siteName = "Nuxt Starter Vitrine";
+const siteDescription =
+  "Starter Nuxt moderne pour creer des sites vitrines performants, SEO-ready et prets pour la production.";
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   compatibilityDate: "2025-07-15",
@@ -7,14 +16,17 @@ export default defineNuxtConfig({
 
   css: ["~/assets/css/main.css"],
 
-  modules: ["@nuxt/image", "@nuxtjs/color-mode", "@nuxtjs/sitemap", "nuxt-og-image"],
+  modules: ["@nuxt/image", "@nuxtjs/color-mode", "@nuxtjs/seo"],
 
   vite: {
     plugins: [tailwindcss()],
   },
 
   site: {
-    url: process.env.NUXT_PUBLIC_SITE_URL || "https://nuxt-starter-vitrine.vercel.app",
+    url: siteUrl,
+    name: siteName,
+    description: siteDescription,
+    defaultLocale: "fr",
   },
 
   ogImage: {
@@ -47,10 +59,8 @@ export default defineNuxtConfig({
     turnstileSecretKey: process.env.TURNSTILE_SECRET_KEY,
 
     public: {
-      siteUrl: process.env.NUXT_PUBLIC_SITE_URL || "https://nuxt-starter-vitrine.vercel.app",
+      siteUrl,
       turnstileSiteKey: process.env.NUXT_PUBLIC_TURNSTILE_SITE_KEY,
-      matomoUrl: process.env.NUXT_PUBLIC_MATOMO_URL || "",
-      matomoSiteId: process.env.NUXT_PUBLIC_MATOMO_SITE_ID || "1",
     },
   },
 
@@ -59,18 +69,6 @@ export default defineNuxtConfig({
       htmlAttrs: {
         lang: "fr",
       },
-
-      titleTemplate: "%s - Nuxt Starter",
-
-      meta: [
-        {
-          name: "description",
-          content:
-            "Starter Nuxt moderne pour creer des sites vitrines performants, SEO-ready et prets pour la production.",
-        },
-        { name: "robots", content: "index, follow" },
-        { name: "author", content: "Nuxt Starter" },
-      ],
 
       link: [
         {

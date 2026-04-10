@@ -8,11 +8,14 @@
     "generate": "nuxt generate",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "prepare": "npx skilld prepare || node -e \"process.exit(0)\""
   },
   "dependencies": {
     "@nuxt/image": "^2.0.0",
     "@nuxtjs/color-mode": "^4.0.0",
+    "@nuxtjs/seo": "^5.1.2",
+    "@nuxtjs/sitemap": "^8.0.12",
     "@unhead/vue": "^2.1.13",
     "lucide-vue-next": "^0.562.0",
     "nodemailer": "^7.0.12",
@@ -25,7 +28,6 @@
   },
   "devDependencies": {
     "@nuxt/eslint": "^1.12.1",
-    "@nuxtjs/sitemap": "^7.6.0",
     "@resvg/resvg-js": "^2.6.2",
     "@tailwindcss/vite": "^4.2.2",
     "@types/nodemailer": "^7.0.4",

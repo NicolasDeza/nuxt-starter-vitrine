@@ -1,39 +1,11 @@
 <script setup>
 import { ShieldCheck } from "lucide-vue-next";
 
-const canonical = useCanonical();
-const seo = {
-  title: "Contact - Nuxt Starter",
+usePageSeo({
+  title: "Contact - Nuxt Starter Vitrine",
   description: "Contactez-nous pour discuter de votre projet web et de vos besoins.",
-};
-const socialDescription = "Base Nuxt moderne avec Tailwind, SEO, Dark Mode, ESLint et Nuxt Image.";
-
-useHead(() => ({
-  link: [
-    {
-      rel: "canonical",
-      href: canonical.value,
-    },
-  ],
-}));
-
-useDefaultOgImage({
-  title: seo.title,
-  description: socialDescription,
+  socialDescription: "Base Nuxt moderne avec Tailwind, SEO, Dark Mode, ESLint et Nuxt Image.",
   eyebrow: "Page contact",
-});
-
-useSeoMeta({
-  title: seo.title,
-  description: seo.description,
-  robots: "index, follow",
-  ogTitle: seo.title,
-  ogDescription: socialDescription,
-  ogUrl: canonical,
-  ogType: "website",
-  twitterCard: "summary_large_image",
-  twitterTitle: seo.title,
-  twitterDescription: socialDescription,
 });
 </script>
 

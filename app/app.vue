@@ -1,14 +1,4 @@
 <script setup>
-import { useRouter } from 'vue-router'
-
-// Gestion matomo en SPA
-const router = useRouter()
-
-router.afterEach(() => {
-  if (import.meta.client && window._paq) {
-    window._paq.push(['trackPageView'])
-  }
-})
 // Dark mode
 const colorMode = useColorMode();
 

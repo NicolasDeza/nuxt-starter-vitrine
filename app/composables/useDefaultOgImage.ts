@@ -5,6 +5,7 @@ interface DefaultOgImageOptions {
 }
 
 export const useDefaultOgImage = (options: DefaultOgImageOptions) => {
+  const site = useSiteConfig();
   const config = useRuntimeConfig();
 
   const domain = computed(() => {
@@ -12,7 +13,7 @@ export const useDefaultOgImage = (options: DefaultOgImageOptions) => {
 
     try {
       return new URL(
-        config.public.siteUrl || `https://${fallback}`,
+        site.url || config.public.siteUrl || `https://${fallback}`,
       ).hostname.replace(/^www\./, "");
     } catch {
       return fallback;
@@ -24,7 +25,7 @@ export const useDefaultOgImage = (options: DefaultOgImageOptions) => {
     {
       title: options.title,
       description: options.description,
-      eyebrow: options.eyebrow || "Nuxt Starter Vitrine",
+      eyebrow: options.eyebrow || site.name || "Nuxt Starter Vitrine",
       domain,
     },
     {

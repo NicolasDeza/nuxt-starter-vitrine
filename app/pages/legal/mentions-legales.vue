@@ -1,28 +1,8 @@
 <script setup>
-const canonical = useCanonical();
-const seo = {
-  title: "Mentions légales",
-  description: "Informations légales et mentions obligatoires du site",
-};
-
-useHead(() => ({
-  link: [
-    {
-      rel: "canonical",
-      href: canonical.value,
-    },
-  ],
-}));
-
-useDefaultOgImage({
-  title: seo.title,
-  description: seo.description,
-  eyebrow: "Page légale",
-});
-
-useSeoMeta({
-  title: seo.title,
-  description: seo.description,
+usePageSeo({
+  title: "Mentions legales - Nuxt Starter Vitrine",
+  description: "Informations legales et mentions obligatoires du site.",
+  eyebrow: "Page legale",
   robots: "noindex, follow",
 });
 </script>
@@ -31,32 +11,28 @@ useSeoMeta({
   <div class="min-h-screen bg-linear-to-b from-white to-slate-50/50 dark:from-[#0F172B] dark:to-[#0A0E1A] py-20">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       <div class="space-y-8">
-        <!-- En-tête -->
         <div class="space-y-4">
           <div
             class="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-medium"
           >
-            Informations légales
+            Informations legales
           </div>
           <h1
             class="text-4xl sm:text-5xl font-bold text-foreground dark:text-white leading-tight"
           >
-            Mentions légales
+            Mentions legales
           </h1>
           <p class="text-lg text-foreground/70 dark:text-white/70">
-            Dernière mise à jour : 9 janvier 2026
+            Derniere mise a jour : 9 janvier 2026
           </p>
         </div>
 
-        <!-- Contenu -->
         <div
           class="prose prose-slate dark:prose-invert max-w-none p-8 rounded-2xl bg-white dark:bg-slate-900/50 border border-foreground/10 dark:border-white/10 shadow-xl"
         >
           <section class="mb-8">
-            <h2 class="text-2xl font-bold text-foreground dark:text-white mb-4">
-              1. Éditeur du site
-            </h2>
-            <p class="text-foreground/80 dark:text-white/80">
+            <h2>1. Editeur du site</h2>
+            <p>
               <strong>Nom :</strong> [Votre nom ou raison sociale]<br>
               <strong>Adresse :</strong> [Votre adresse]<br>
               <strong>Email :</strong> nicolasdeza@hotmail.be<br>
@@ -65,73 +41,59 @@ useSeoMeta({
           </section>
 
           <section class="mb-8">
-            <h2 class="text-2xl font-bold text-foreground dark:text-white mb-4">
-              2. Hébergement
-            </h2>
-            <p class="text-foreground/80 dark:text-white/80">
-              Ce site est hébergé par :<br>
-              <strong>Hébergeur :</strong> [Nom de l'hébergeur]<br>
-              <strong>Adresse :</strong> [Adresse de l'hébergeur]<br>
-              <strong>Site web :</strong> [URL de l'hébergeur]
+            <h2>2. Hebergement</h2>
+            <p>
+              <strong>Hebergeur :</strong> [Nom de l'hebergeur]<br>
+              <strong>Adresse :</strong> [Adresse de l'hebergeur]<br>
+              <strong>Site web :</strong> [URL de l'hebergeur]
             </p>
           </section>
 
           <section class="mb-8">
-            <h2 class="text-2xl font-bold text-foreground dark:text-white mb-4">
-              3. Propriété intellectuelle
-            </h2>
-            <p class="text-foreground/80 dark:text-white/80">
-              L'ensemble du contenu de ce site (textes, images, vidéos, etc.) est
-              protégé par les lois relatives à la propriété intellectuelle. Toute
-              reproduction, même partielle, est interdite sans autorisation
-              préalable.
+            <h2>3. Propriete intellectuelle</h2>
+            <p>
+              L'ensemble du contenu du site est protege par les regles de propriete
+              intellectuelle. Toute reproduction, meme partielle, est interdite
+              sans autorisation prealable.
             </p>
           </section>
 
           <section class="mb-8">
-            <h2 class="text-2xl font-bold text-foreground dark:text-white mb-4">
-              4. Données personnelles
-            </h2>
-            <p class="text-foreground/80 dark:text-white/80">
-              Conformément au Règlement Général sur la Protection des Données
-              (RGPD), vous disposez d'un droit d'accès, de rectification et de
-              suppression de vos données personnelles. Pour exercer ce droit,
-              contactez-nous à l'adresse : nicolasdeza@hotmail.be
+            <h2>4. Donnees personnelles</h2>
+            <p>
+              Conformement au RGPD, vous disposez d'un droit d'acces, de
+              rectification et de suppression de vos donnees personnelles. Pour
+              exercer ce droit, contactez-nous a l'adresse ci-dessus.
             </p>
           </section>
 
           <section class="mb-8">
-            <h2 class="text-2xl font-bold text-foreground dark:text-white mb-4">
-              5. Cookies
-            </h2>
-            <p class="text-foreground/80 dark:text-white/80">
-              Ce site peut utiliser des cookies pour améliorer l'expérience
-              utilisateur. Vous pouvez configurer votre navigateur pour refuser
-              les cookies.
+            <h2>5. Cookies</h2>
+            <p>
+              Le site peut utiliser des cookies techniques necessaires a son bon
+              fonctionnement. Vous pouvez configurer votre navigateur pour les
+              limiter ou les refuser.
             </p>
           </section>
 
           <section>
-            <h2 class="text-2xl font-bold text-foreground dark:text-white mb-4">
-              6. Responsabilité
-            </h2>
-            <p class="text-foreground/80 dark:text-white/80">
-              L'éditeur s'efforce d'assurer l'exactitude des informations
-              diffusées sur ce site, mais ne peut garantir l'absence d'erreurs ou
-              d'omissions. L'utilisateur reconnaît utiliser ces informations sous
-              sa propre responsabilité.
+            <h2>6. Responsabilite</h2>
+            <p>
+              L'editeur s'efforce de fournir des informations a jour, sans garantir
+              l'absence totale d'erreurs ou d'omissions. L'utilisateur reste
+              responsable de l'usage qu'il fait des informations presentes sur le
+              site.
             </p>
           </section>
         </div>
 
-        <!-- Bouton retour -->
         <div class="flex justify-center pt-8">
           <NuxtLink
             to="/"
             class="inline-flex items-center gap-2 px-6 py-3 rounded-lg bg-primary hover:bg-primary-hover text-white font-medium transition-colors"
           >
-            <span aria-hidden="true">←</span>
-            Retour à l'accueil
+            <span aria-hidden="true">&larr;</span>
+            Retour a l'accueil
           </NuxtLink>
         </div>
       </div>
